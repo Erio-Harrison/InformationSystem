@@ -1,0 +1,15 @@
+# ninja log v5
+0	2628	7275505603124992	CMakeFiles/InformationSystem.dir/MainFile/Window.cpp.obj	e8b87b470b4726c5
+3285	5951	7275505636364568	CMakeFiles/InformationSystem.dir/main.cpp.obj	2088856fbbb80982
+42	2676	7275505603423967	CMakeFiles/InformationSystem.dir/MainFile/PushButton.cpp.obj	a161060e61ab37fa
+6	2135	7275544143905216	CMakeFiles/InformationSystem.dir/MainFile/Management.cpp.obj	926a24972ba1718a
+2676	2812	7275505604983219	CMakeFiles/InformationSystem.dir/MainFile/BasicWidget.cpp.obj	2c38c186a885e468
+6	1881	7275506504770737	CMakeFiles/InformationSystem.dir/MainFile/Table.cpp.obj	5442c7d4b2903bc6
+2813	5610	7275505632946303	CMakeFiles/InformationSystem.dir/MainFile/Member.cpp.obj	8560265a78748e48
+2135	2473	7275544147257427	InformationSystem.exe	c43556c4276b00a5
+5	2176	7275549354059947	CMakeFiles/InformationSystem.dir/MainFile/Management.cpp.obj	926a24972ba1718a
+2176	2336	7275549355619557	InformationSystem.exe	c43556c4276b00a5
+4	2225	7275549899297825	CMakeFiles/InformationSystem.dir/MainFile/Management.cpp.obj	926a24972ba1718a
+2226	2397	7275549900980070	InformationSystem.exe	c43556c4276b00a5
+5	2269	7275551689164086	CMakeFiles/InformationSystem.dir/MainFile/Management.cpp.obj	926a24972ba1718a
+2270	2445	7275551690861685	InformationSystem.exe	c43556c4276b00a5
