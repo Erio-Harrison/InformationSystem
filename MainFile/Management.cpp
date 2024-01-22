@@ -10,7 +10,7 @@ Management::Management()
 {
     readFile("./images/member.txt");
     ::loadimage(&m_bk, "./images/BingWallpaper.jpg", Window::width(), Window::height());
-    ::settextstyle(32, 0, "微软雅黑");
+    ::settextstyle(24, 0, "微软雅黑");
 
     //主界面按钮初始化
     menu_buttons.push_back(new PushButton("查看客户"));
@@ -31,11 +31,12 @@ Management::Management()
     show_table = new Table;
     show_table->setRowCount(16);
     show_table->setHeader(m_header);
-    show_table->move(145, 100);
 
     for (auto& member : members) {
         show_table->insertData(member.printData());
     }
+    //让表格居中
+    show_table->move((Window::width()-show_table->width())/2, (Window::height()-show_table->height())/2);
 
 }
 //begin
@@ -46,7 +47,6 @@ void Management::run() {
     while (true) {
         Window::clear();
         drawBackGround();
-        eventLoop();
 
         if (Window::hasMsg()) {
             m_msg = Window::getMsg();
@@ -59,6 +59,7 @@ void Management::run() {
                     }
                     break;
                 default:
+                    eventLoop();
                     break;
             }
         }
@@ -108,8 +109,7 @@ int Management::menu() {
 
 //1.Show all objects
 void Management::display() {
-    outtextxy(0, 0, "display");
-    cout << "display" << endl;
+    show_table->show();
 }
 
 //2.Add
@@ -143,7 +143,7 @@ void Management::drawBackGround()
 
 void Management::eventLoop()
 {
-    show_table->show();
+    show_table ->handleButton(m_msg);
 }
 
 void Management::readFile(const std::string& filename) {

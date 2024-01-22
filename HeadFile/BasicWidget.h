@@ -2,6 +2,7 @@
 class BassicWidget {
 public:
     BassicWidget(int x, int y, int width, int height);
+    virtual ~BassicWidget(){};
     int width();
     int height();
     void sizeFix(int width, int height);
