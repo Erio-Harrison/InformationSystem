@@ -19,5 +19,6 @@ set(SOURCE_FILES
 
 file(COPY ${CMAKE_SOURCE_DIR}/images/member.txt DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/images)
 file(COPY ${CMAKE_SOURCE_DIR}/images/test.txt DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/images)
+file(COPY ${CMAKE_SOURCE_DIR}/images/BingWallpaper.jpg DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/images)
 
 add_executable(InformationSystem ${SOURCE_FILES})

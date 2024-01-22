@@ -14,11 +14,11 @@ public:
     static void flushDraw();
     static void endDraw();
 
-    //æŒ‰é”®æ“ä½œå’Œé¼ æ ‡æ“ä½œ
+    //°´¼ü²Ù×÷ºÍÊó±ê²Ù×÷
     inline static bool hasMsg() { return peekmessage(&m_msg, EX_MOUSE|EX_KEY); };
     inline static const ExMessage& getMsg() { return m_msg; }
 
 private:
-    HWND m_handle;					//çª—å£å¥æŸ„
-    inline static ExMessage m_msg;	//é¼ æ ‡æ¶ˆæ¯å’Œé”®ç›˜æ¶ˆæ¯
+    HWND m_handle;					//´°¿Ú¾ä±ú
+    inline static ExMessage m_msg;	//Êó±êÏûÏ¢ºÍ¼üÅÌÏûÏ¢
 };

@@ -9,16 +9,16 @@ using namespace std;
 Management::Management()
 {
     readFile("./images/member.txt");
-    ::loadimage(&m_bk, "./images/BingWallPaper.png", Window::width(), Window::height());
-    ::settextstyle(32, 0, "æ¥·ä½“");
+    ::loadimage(&m_bk, "./images/BingWallpaper.jpg", Window::width(), Window::height());
+    ::settextstyle(32, 0, "Î¢ÈíÑÅºÚ");
 
-    //ä¸»ç•Œé¢æŒ‰é’®åˆå§‹åŒ–
-    menu_buttons.push_back(new PushButton("æŸ¥çœ‹å®¢æˆ·"));
-    menu_buttons.push_back(new PushButton("æ·»åŠ å®¢æˆ·"));
-    menu_buttons.push_back(new PushButton("åˆ é™¤å®¢æˆ·"));
-    menu_buttons.push_back(new PushButton("ä¿®æ”¹å®¢æˆ·"));
-    menu_buttons.push_back(new PushButton("æŸ¥æ‰¾å®¢æˆ·"));
-    menu_buttons.push_back(new PushButton("é€€å‡ºç³»ç»Ÿ"));
+    //Ö÷½çÃæ°´Å¥³õÊ¼»¯
+    menu_buttons.push_back(new PushButton("²é¿´¿Í»§"));
+    menu_buttons.push_back(new PushButton("Ìí¼Ó¿Í»§"));
+    menu_buttons.push_back(new PushButton("É¾³ı¿Í»§"));
+    menu_buttons.push_back(new PushButton("ĞŞ¸Ä¿Í»§"));
+    menu_buttons.push_back(new PushButton("²éÕÒ¿Í»§"));
+    menu_buttons.push_back(new PushButton("ÍË³öÏµÍ³"));
     for (int i = 0; i < menu_buttons.size(); i++) {
         menu_buttons[i]->sizeFix(250, 50);
         int buttonX = (Window::width() - menu_buttons[i]->width()) / 2;
@@ -27,7 +27,7 @@ Management::Management()
         menu_buttons[i]->move(buttonX, buttonY);
     }
 
-    //æŸ¥çœ‹è¡¨æ ¼
+    //²é¿´±í¸ñ
     show_table = new Table;
     show_table->setRowCount(16);
     show_table->setHeader(m_header);
@@ -52,7 +52,7 @@ void Management::run() {
             m_msg = Window::getMsg();
             switch (m_msg.message)
             {
-                //æŒ‰Escè¿”å›ä¸»ç•Œé¢
+                //°´Esc·µ»ØÖ÷½çÃæ
                 case WM_KEYDOWN:
                     if (m_msg.vkcode == VK_ESCAPE) {
                         op = Menu;
@@ -153,10 +153,10 @@ void Management::readFile(const std::string& filename) {
         return;
     }
 
-    // è¯»å–ç¬¬ä¸€è¡Œçš„è¡¨å¤´
+    // ¶ÁÈ¡µÚÒ»ĞĞµÄ±íÍ·
     std::getline(read, m_header);
 
-    // è¯»å–æ•°æ®
+    // ¶ÁÈ¡Êı¾İ
     std::string line;
     while (std::getline(read, line)) {
         if (line.empty()) {
@@ -167,7 +167,6 @@ void Management::readFile(const std::string& filename) {
         Member member;
         if (ss >> member.name >> member.nowArea >> member.incomeLow >> member.incomeHigh >> member.improveOrNot) {
             members.push_back(member);
-            std::cout << member.name << " " << member.nowArea << " " << member.incomeLow << " " << member.incomeHigh << " " << member.improveOrNot << std::endl;
         }
     }
 }
@@ -175,25 +174,22 @@ void Management::readFile(const std::string& filename) {
 
 void Management::saveFile(const std::string& filename)
 {
-    fstream write(filename, ios::out | ios::trunc);
+    fstream write("F:/repo/InformationSystem/images/test.txt", ios::out | ios::trunc);
     if (!write.is_open()) {
         cerr << filename << "open failed" << endl;
         return;
     }
     cout << "File opened successfully." << endl;
-    //å†™ç¬¬ä¸€è¡Œçš„è¡¨å¤´
+    //Ğ´µÚÒ»ĞĞµÄ±íÍ·
     m_header += "\n";
-    cout << "Header: " << m_header << endl;
     write.write(m_header.c_str(), m_header.size());
-    cout<<"you can see it"<<endl;
-    //å†™æ•°æ®
+    //Ğ´Êı¾İ
     if (members.empty()) {
         cout << "No members to write." << endl;
     } else {
         cout << "Writing members data..." << endl;
         for (auto& member : members) {
             std::string information = member.printData();
-            cout << "Member Info: " << information << endl;
             write.write(information.c_str(), information.size());
         }
     }

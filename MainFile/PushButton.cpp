@@ -11,9 +11,9 @@ void PushButton::show()
     setfillcolor(cur_c);
     ::fillroundrect(m_x, m_y, m_x + m_width, m_y + m_height,10,10);
 
-    //è®¾ç½®æ–‡å­—çš„é¢œè‰²
+    //ÉèÖÃÎÄ×ÖµÄÑÕÉ«
     settextcolor(BLACK);
-    //æŠŠæ–‡å­—å±…ä¸­æ˜¾ç¤ºåœ¨æŒ‰é’®ä¸­é—´
+    //°ÑÎÄ×Ö¾ÓÖĞÏÔÊ¾ÔÚ°´Å¥ÖĞ¼ä
     int charX = m_x + (m_width - textwidth(m_text.c_str())) / 2;
     int charY = m_y + (m_height - textheight(m_text.c_str())) / 2;
     ::outtextxy(charX, charY, m_text.c_str());
