@@ -13,6 +13,6 @@ Member::Member(std::string name, std::string nowArea, uint32 incomeLow, uint32 i
 std::string Member::printData()
 {
     std::stringstream ss;
-    ss << name << "\t" << nowArea << "\t" << "\t" << incomeLow << "\t" << "\t" << incomeHigh << "\t" << "\t" << improveOrNot<<std::endl;
+    ss << name << "\t" << nowArea  << "\t" << incomeLow << "\t" << incomeHigh  << "\t" << improveOrNot<<std::endl;
     return ss.str();
 }
